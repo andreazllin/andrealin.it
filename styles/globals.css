@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+    font-weight: 100 200 300 400 500 600 700 800 900;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: silver;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: gray;
+}
+
+::selection {
+    background: rgba(174, 52, 235, 0.5);
+    color: white;
+}
+
+::-moz-selection {
+    background: rgba(174, 52, 235, 0.5);
+    color: white;
+}
