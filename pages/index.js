@@ -1,99 +1,82 @@
-import Navbar from '@components/Navbar';
-import { Flex, Box, Text, Image, Stack, HStack, Icon } from '@chakra-ui/react';
-import { FaUser, FaBolt, FaEnvelope, FaCode, FaBook, FaCog } from 'react-icons/fa';
-import ContactForm from '@components/ContactForm';
-import Contacts from '@components/Contacts';
-import ToggleDarkMode from '@components/ToggleDarkMode';
-import SkillProgress from '@components/SkillProgress';
-import { languages, libraries, tools } from '@content/skills';
+import Layout from "@components/Layout"
+import ContactForm from "@components/ContactForm"
+import Skill from "@components/Skill"
+import Head from "next/head"
+import Image from "next/image"
+import { Fade } from "react-awesome-reveal"
 
 export default function Home() {
-    const birthday = new Date('2002-10-31');
+    const birthday = new Date("2002-10-31")
 
     const calculateAge = (birthday) => {
-        let difference = Date.now() - birthday.getTime();
-        let date = new Date(difference);
-        return Math.abs(date.getUTCFullYear() - 1970);
-    };
+        let difference = Date.now() - birthday.getTime()
+        let date = new Date(difference)
+        return Math.abs(date.getUTCFullYear() - 1970)
+    }
 
-    const age = calculateAge(birthday);
+    const age = calculateAge(birthday)
 
     return (
-        <Flex justify="center" align="center" flexDirection="column">
-            <Box w={{ base: '100%', md: '90%', lg: '80%', xl: '70%' }}>
-                <Navbar />
+        <>
+            <Head>
+                <title>Andrea Lin | Full Stack Web Developer</title>
+                <meta name="description" content="Ciao, sono Andrea Lin, e sono un Full Stack Developer." />
+                <meta name="keywords" content="portfolio, andrea zi liang lin, andrea ziliang lin, andrea zi liang, andrea ziliang, andrea, zi liang, ziliang, andrea lin, zi liang lin, lin, web-dev, mern" />
+            </Head>
 
-                <Flex justify="center" align="center" m={10}>
-                    <Stack direction={{ base: 'column', lg: 'row' }} align="center" spacing={7}>
-                        <Box boxSize="150px">
-                            <Image boxShadow="xl" borderRadius="full" src="https://i.imgur.com/TgxmYrp.jpg" alt="Andrea Lin" />
-                        </Box>
-                        <Box>
-                            <Stack spacing={-5}>
-                                <HStack>
-                                    <Text fontSize="6xl" fontWeight={900}>
-                                        Andrea
-                                    </Text>
-                                    <Text fontSize="6xl" fontWeight={900} color="green.500">
-                                        Lin
-                                    </Text>
-                                </HStack>
-
-                                <Text fontSize="3xl" color="gray.500">
-                                    Studente
-                                </Text>
-                            </Stack>
-                        </Box>
-                    </Stack>
-                </Flex>
-                <Box m={10} id="aboutme">
-                    <HStack>
-                        <Icon as={FaUser} fontSize="xl" color="red.500" />
-                        <Text fontSize="3xl" fontWeight={800}>
-                            Chi Sono?
-                        </Text>
-                    </HStack>
-                    <Box p={5}>
-                        <Text fontSize="xl">
-                            Ciao! mi chiamo Andrea Lin, ho {age} anni attualmente sto frequentando il quinto anno dell'indirizzo informatico all'I.I.S. Blaise Pascal di Reggio Emilia.
-                            <br />
-                            In futuro vorrei studiare informatica all'università e poi lavorare come Web Developer.
-                        </Text>
-                    </Box>
-                </Box>
-                <Box m={10} id="skills">
-                    <HStack>
-                        <Icon as={FaBolt} fontSize="xl" color="yellow.400" />
-                        <Text fontSize="3xl" fontWeight={800}>
-                            Skills
-                        </Text>
-                    </HStack>
-                    <Box p={5}>
-                        <SkillProgress icon={FaCode} color="green.300" title="Linguaggi" data={languages} />
-                        <SkillProgress icon={FaBook} color="red.400" title="Librerie / Frameworks" data={libraries} />
-                        <SkillProgress icon={FaCog} color="gray.500" title="Strumenti / Servizi" data={tools} />
-                    </Box>
-                </Box>
-                <Box m={10} id="contact">
-                    <HStack>
-                        <Icon as={FaEnvelope} fontSize="xl" color="blue.400" />
-                        <Text fontSize="3xl" fontWeight={800}>
-                            Contattami
-                        </Text>
-                    </HStack>
-                    <Box p={5}>
-                        <Stack direction={{ base: 'column', lg: 'row' }} spacing={5}>
-                            <Box w={{ base: '100%', lg: '65%' }}>
-                                <ContactForm />
-                            </Box>
-                            <Box w={{ base: '100%', lg: '35%' }}>
-                                <Contacts />
-                            </Box>
-                        </Stack>
-                    </Box>
-                </Box>
-            </Box>
-            <ToggleDarkMode />
-        </Flex>
-    );
+            <Layout>
+                <Fade>
+                    <div id="aboutme" className="flex gap-10 p-10 items-start flex-col lg:flex-row">
+                        <Image className="object-scale-down" height={400} width={400} src="/assets/Photo.jpg" />
+                        {/* <div className="flex flex-col gap-5 w-full">
+                            <h1 className="font-sans font-semibold text-2xl">Chi sono?</h1>
+                            <p className="font-regular text-gray-500 text-sm tracking-wider max-w-sm">Ciao! mi chiamo Andrea Lin, ho {age} anni attualmente lavoro per <a className="font-bold text-black hover:text-black/75 transition transition-opacity" href="https://soluzionifutura.it/" rel="noopener noreferrer" target="_blank">Soluzioni Futura</a>.</p>
+                        </div> */}
+                        <div className="font-sans text-2xl font-semibold bg-black w-auto sm:w-96 p-10 text-white">
+                            Ciao! mi chiamo Andrea Lin, ho {age} anni attualmente sono un developer @ <a className="font-bold text-white/75 hover:text-white/100 transition" href="https://soluzionifutura.it/" rel="noopener noreferrer" target="_blank">Soluzioni Futura</a>.
+                        </div>
+                    </div>
+                </Fade>
+                <div id="skills" className="flex flex-col gap-5 p-10 xl:w-11/12 2xl:w-10/12">
+                    {/* <Fade>
+                            <h1 className="font-sans font-semibold text-2xl">Skills</h1>
+                        </Fade>
+                        <Fade>
+                            <SkillProgress title="Linguaggi" data={languages} />
+                        </Fade>
+                        <Fade>
+                            <SkillProgress title="Librerie / Frameworks" data={libraries} />
+                        </Fade>
+                        <Fade>
+                            <SkillProgress title="Strumenti / Servizi" data={tools} />
+                        </Fade> */}
+                    <div className="flex flex-col gap-5">
+                        <Fade>
+                            <h1 className="font-sans font-semibold text-2xl">Skills</h1>
+                        </Fade>
+                        <Fade>
+                            <p className="font-regular text-gray-500 text-lg tracking-wider leading-9">
+                                Durante le superiori, a scuola, per lo sviluppo di programmi Desktop ho imparato ad utilizzare <Skill name="C++" color="#00589D" textColor="white" /> <Skill name="Java" color="#E32C2D" textColor="white" /> e a casa ho imparato <Skill name="Python" color="#FCD357" textColor="#306998" />
+                                <br />
+                                Invece nel campo del Web Development abbiamo studiato <Skill name="HTML" color="#E54C21" textColor="white" /> <Skill name="CSS" color="#0170BA" textColor="white" /> <Skill name="PHP" color="#787CB4" textColor="white" /> <Skill name="JavaScript" color="#F7DF1E" textColor="black" /> quest'ultimo approfondito autonomamente a casa con l'utilizzo di <Skill name="Node.js" color="#026E00" textColor="white" /> e framework come <Skill name="Express.js" color="#969696" textColor="white" /> per il backend e <Skill name="React.js" color="#2A2C2E" textColor="#61DAFB" /> <Skill name="Next.js" color="#1E272E" textColor="white" /> per il frontend.
+                                <br />
+                                Per la gestione dei database, a scuola, abbiamo utilizzato <Skill name="MySQL" color="#00618A" textColor="#E48E00" />, in autonomia ho utilizzato <Skill name="MongoDB" color="#439240" textColor="white" /> <Skill name="Firebase" color="#F5820B" textColor="white" />
+                                <br />
+                                Ora lavoro con <Skill name="TypeScript" color="#3178C6" textColor="#FFFFFF" /> sia in frontend che in backend.
+                                <br />
+                                <br />
+                                Fun fact: sono certificato <Skill name="C1" color="#E32C2D" textColor="gold" /> in inglese.
+                            </p>
+                        </Fade>
+                    </div>
+                </div>
+                <Fade>
+                    <div id="contactme" className="flex flex-col gap-5 p-10 w-full sm:w-96 md:w-9/12 xl:w-7/12">
+                        <h1 className="font-sans font-semibold text-2xl">Contattami</h1>
+                        <ContactForm />
+                    </div>
+                </Fade>
+            </Layout>
+        </>
+    )
 }

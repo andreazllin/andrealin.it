@@ -1,26 +1,31 @@
 {
-  "name": "andrealin.it",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "pretty": "prettier --write \"./**/*.{js,jsx,json}\""
+    "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.4.2",
-    "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.1.5",
+    "@tailwindcss/typography": "^0.4.1",
     "axios": "^0.21.1",
+    "date-fns": "^2.23.0",
     "dotenv": "^8.2.0",
-    "framer-motion": "^4.1.0",
-    "next": "10.0.9",
+    "fs": "^0.0.1-security",
+    "gray-matter": "^4.0.3",
+    "next": "latest",
     "nodemailer": "^6.5.0",
-    "prettier": "^2.2.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "^16.8.6",
+    "react-awesome-reveal": "^3.8.1",
+    "react-dom": "^16.8.6",
     "react-hook-form": "^6.15.5",
-    "react-icons": "^4.2.0"
+    "react-icons": "^4.2.0",
+    "react-scroll-rotate": "^0.0.7",
+    "remark": "^13.0.0",
+    "remark-html": "^13.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4"
   }
 }
