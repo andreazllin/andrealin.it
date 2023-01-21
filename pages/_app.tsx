@@ -1,13 +1,11 @@
 import "@/styles/globals.css"
 import type { AppProps, AppType } from "next/app"
-import { Inter } from "@next/font/google"
-
-const inter = Inter({ subsets: ["latin"] })
+import Providers from "@/components/Providers"
 
 const App: AppType = ({ Component, pageProps }: AppProps) => (
-  <main className={inter.className}>
+  <Providers>
     <Component {...pageProps} />
-  </main>
+  </Providers>
 )
 
 export default App
