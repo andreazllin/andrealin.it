@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  @apply scroll-smooth;
+  @apply scroll-smooth transition-colors;
 }
 
 img {

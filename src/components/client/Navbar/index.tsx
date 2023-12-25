@@ -6,9 +6,9 @@ import Icon, { IconProps } from "../Icon"
 import Link from "next/link"
 import clsx from "clsx"
 import Image from "next/image"
-import useCookieStorage from "@/hooks/useCookieStorage"
 import NavLink from "./NavLink"
 import { socials } from "@/constants/socials"
+import useDarkModeStore from "@/stores/useDarkModeStore"
 
 const navClassName = classnames(
   "gap-4 flex flex-row justify-between sm:flex-col py-4 px-8 sm:p-16 w-full sm:w-80",
@@ -26,10 +26,8 @@ const iconProps: Omit<IconProps, "name"> = {
 }
 
 const Navbar: FunctionComponent = () => {
-  const [isDark, setDarkMode] = useCookieStorage({
-    key: "darkMode",
-    initialValue: false
-  })
+  const isDark = useDarkModeStore.use.isDark()
+  const toggleDarkMode = useDarkModeStore.use.toggleDarkMode()
 
   return (
     <nav className={navClassName}>
@@ -67,11 +65,7 @@ const Navbar: FunctionComponent = () => {
           {...iconProps}
           className={clsx(iconProps.className, "animate-pulse")}
           name={isDark ? "moon" : "sun"}
-          // TODO: Find a better way to handle dark mode
-          onClick={() => {
-            setDarkMode(!isDark)
-            window.location.reload()
-          }}
+          onClick={toggleDarkMode}
         />
       </div>
     </nav>

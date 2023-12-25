@@ -7,6 +7,7 @@ import clsx from "clsx"
 import { cookies } from "next/headers"
 
 import "@/styles/globals.css"
+import Providers from "@/components/client/Providers"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -26,7 +27,11 @@ const RootLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
     <html lang="en" className={clsx(darkMode === "true" && "dark")}>
       <body className={bodyClassName}>
         <Navbar />
-        <main className={mainClassName}>{children}</main>
+        <main className={mainClassName}>
+          <Providers>
+            {children}
+          </Providers>
+        </main>
       </body>
     </html>
   )

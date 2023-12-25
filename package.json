@@ -13,7 +13,6 @@
   "dependencies": {
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
-    "cookies-next": "^4.1.0",
     "date-fns": "^3.0.6",
     "immer": "^10.0.3",
     "next": "14.0.4",
