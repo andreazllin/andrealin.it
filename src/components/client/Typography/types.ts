@@ -33,6 +33,10 @@ export type TypographyStyle = {
    * Text color variant
    */
   variant?: "primary" | "secondary"
+  /**
+   * Line heigth
+   */
+  lineHeight?: 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | "none" | "tight" | "snug" | "normal" | "relaxed" | "loose"
 }
 
 type Heading = HTMLAttributes<HTMLHeadingElement> & {

@@ -6,6 +6,22 @@ import { classnames, cva } from "@/helpers/classnames"
 
 const typography = cva("", {
   variants: {
+    lineHeight: {
+      3: "leading-3",
+      4: "leading-4",
+      5: "leading-5",
+      6: "leading-6",
+      7: "leading-7",
+      8: "leading-8",
+      9: "leading-9",
+      10: "leading-10",
+      none: "leading-none",
+      tight: "leading-tight",
+      snug: "leading-snug",
+      normal: "leading-normal",
+      relaxed: "leading-relaxed",
+      loose: "leading-loose"
+    },
     weight: {
       regular: "font-normal",
       medium: "font-medium",
@@ -62,9 +78,10 @@ const Typography: FunctionComponent<TypographyProps> = ({
   align = "left",
   variant = "primary",
   decoration = "no-underline",
+  lineHeight = "normal",
   ...props
 }) => {
-  const typographyClasses = typography({ weight, size, family, align, decoration, variant })
+  const typographyClasses = typography({ weight, size, family, align, decoration, variant, lineHeight })
   const classes = classnames(typographyClasses, className)
 
   return (
