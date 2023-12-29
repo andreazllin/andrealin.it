@@ -11,7 +11,7 @@ import { socials } from "@/constants/socials"
 import useDarkModeStore from "@/stores/useDarkModeStore"
 
 const navClassName = classnames(
-  "gap-4 flex flex-row justify-between sm:flex-col py-4 px-8 sm:p-16 w-full sm:w-80",
+  "z-30 gap-4 flex flex-row justify-between sm:flex-col py-4 px-8 sm:p-16 w-full sm:w-80",
   "bg-slate-50 dark:bg-slate-900"
 )
 
