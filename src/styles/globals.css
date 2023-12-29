@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Stray";
+  src: url("/assets/fonts/Stray.woff2");
+}
+
 * {
   @apply scroll-smooth transition-colors;
 }
@@ -12,6 +17,7 @@ img {
 }
 
 @layer utilities {
+  /* Safe Area Utilities */
   .p-safe {
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
       env(safe-area-inset-bottom) env(safe-area-inset-left);
@@ -89,5 +95,19 @@ img {
   .left-safe {
     left: 0;
     left: env(safe-area-inset-right);
+  }
+
+  /* Text writing mode utilities */
+
+  .writing-horizontal-tb {
+    writing-mode: horizontal-tb;
+  }
+
+  .writing-vertical-rl {
+    writing-mode: vertical-rl;
+  }
+
+  .writing-vertical-lr {
+    writing-mode: vertical-lr;
   }
 }

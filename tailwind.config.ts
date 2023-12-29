@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        stray: ["Stray", "sans-serif"]
+      },
       colors: {
         slate: {
           900: "#121417",
