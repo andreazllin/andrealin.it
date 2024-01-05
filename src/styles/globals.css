@@ -9,7 +9,11 @@
 }
 
 * {
-  @apply scroll-smooth transition-colors;
+  @apply scroll-smooth transition-colors duration-150;
+}
+
+p, h1, h2, h3, h4, h5, h6, span, a {
+  @apply duration-50;
 }
 
 img {

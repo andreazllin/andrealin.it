@@ -15,12 +15,11 @@ const inter = Inter({ subsets: ["latin"] })
 const bodyClassName = classnames(
   inter.className,
   "max-w-5xl",
-  "h-screen m-auto flex flex-col sm:flex-row",
-  "bg-white dark:bg-slate-800",
-  "m-safe"
+  "h-[100dvh] m-auto flex flex-col md:flex-row",
+  "bg-white dark:bg-slate-800"
 )
 
-const mainClassName = classnames("w-full overflow-y-scroll py-4 px-8 sm:p-16 relative flex-1 z-10")
+const mainClassName = classnames("w-full overflow-y-scroll py-4 px-8 md:p-16 relative flex-1 z-10")
 
 const RootLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   const isDark = cookies().get("darkMode")?.value === "true"

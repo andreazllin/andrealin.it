@@ -9,9 +9,10 @@ import Image from "next/image"
 import NavLink from "./NavLink"
 import { socials } from "@/constants/socials"
 import useDarkModeStore from "@/stores/useDarkModeStore"
+import Typography from "../Typography"
 
 const navClassName = classnames(
-  "z-30 gap-4 flex flex-row justify-between sm:flex-col py-4 px-8 sm:p-16 w-full sm:w-80",
+  "z-30 flex flex-row justify-between md:flex-col py-4 px-8 md:p-16 w-full md:w-80",
   "bg-slate-50 dark:bg-slate-900"
 )
 
@@ -20,8 +21,7 @@ const iconProps: Omit<IconProps, "name"> = {
   className: classnames(
     "cursor-pointer",
     "text-slate-300 dark:text-slate-50",
-    "hover:text-opacity-50",
-    "transition-colors duration-250"
+    "hover:text-opacity-50"
   )
 }
 
@@ -31,21 +31,28 @@ const Navbar: FunctionComponent = () => {
 
   return (
     <nav className={navClassName}>
-      <Link href="/">
+      <Link href="/" className="hidden md:block">
         <Image
-          className="object-fit h-auto w-auto rounded-full hidden sm:flex"
+          className="object-fit h-auto w-auto rounded-full"
           width={100}
           height={100}
           src="/assets/images/profile.jpg"
           alt="Andrea Lin"
         />
+        <Typography variant="secondary" className="mt-2">
+          Full Stack Web Developer
+        </Typography>
       </Link>
-      {/* <Typography variant="secondary">web dev.</Typography> */}
-      <div className="flex-1">
-        <ul>
+      <div className="flex-1 my-0 mr-4 md:my-6 md:mr-0">
+        <ul className="flex gap-2 md:flex-col">
           <li>
             <NavLink href={"/#about"}>
-              about
+              About me
+            </NavLink>
+          </li>
+          <li>
+            <NavLink href={"/#certifications"}>
+              Certifications
             </NavLink>
           </li>
         </ul>

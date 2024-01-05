@@ -4,24 +4,8 @@ import { FunctionComponent } from "react"
 import { TypographyProps } from "./types"
 import { classnames, cva } from "@/helpers/classnames"
 
-const typography = cva("", {
+const typography = cva("lowercase duration-50", {
   variants: {
-    lineHeight: {
-      3: "leading-3",
-      4: "leading-4",
-      5: "leading-5",
-      6: "leading-6",
-      7: "leading-7",
-      8: "leading-8",
-      9: "leading-9",
-      10: "leading-10",
-      none: "leading-none",
-      tight: "leading-tight",
-      snug: "leading-snug",
-      normal: "leading-normal",
-      relaxed: "leading-relaxed",
-      loose: "leading-loose"
-    },
     weight: {
       regular: "font-normal",
       medium: "font-medium",
@@ -64,6 +48,22 @@ const typography = cva("", {
     variant: {
       primary: "text-slate-900 dark:text-white",
       secondary: "text-slate-500 dark:text-slate-400"
+    },
+    lineHeight: {
+      3: "leading-3",
+      4: "leading-4",
+      5: "leading-5",
+      6: "leading-6",
+      7: "leading-7",
+      8: "leading-8",
+      9: "leading-9",
+      10: "leading-10",
+      none: "leading-none",
+      tight: "leading-tight",
+      snug: "leading-snug",
+      normal: "leading-normal",
+      relaxed: "leading-relaxed",
+      loose: "leading-loose"
     }
   }
 })

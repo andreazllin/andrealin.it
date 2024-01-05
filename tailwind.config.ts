@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      transitionDuration: {
+        50: "50ms"
+      },
       fontFamily:{
         stray: ["Stray", "sans-serif"]
       },

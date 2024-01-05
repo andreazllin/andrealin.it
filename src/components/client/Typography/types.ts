@@ -7,9 +7,9 @@ export type TypographyProps = (Heading | Paragraph | Span) &
 
 export type TypographyStyle = {
   /**
-   * Font weight
-   * Regular: 400
-   * Medium: 500
+   * Font weight,
+   * Regular: 400 |
+   * Medium: 500 |
    * Semibold: 600
    */
   weight?: "regular" | "medium" | "semibold"
