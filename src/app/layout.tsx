@@ -19,7 +19,8 @@ const bodyClassName = classnames(
   inter.className,
   "max-w-5xl",
   "h-[100dvh] m-auto flex flex-col md:flex-row",
-  "bg-white dark:bg-slate-800"
+  "bg-white dark:bg-slate-800",
+  "overflow-hidden"
 )
 
 const mainClassName = classnames("w-full overflow-y-scroll py-4 px-8 md:p-16 relative flex-1 z-10 scrollbar-none")

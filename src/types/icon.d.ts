@@ -8,5 +8,7 @@ export type IconName =
 	| "brand-linkedin"
 	| "brand-twitter"
 	| "mail"
+	| "menu-2"
 	| "moon"
 	| "sun"
+	| "x"

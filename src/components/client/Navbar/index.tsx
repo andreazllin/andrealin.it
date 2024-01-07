@@ -10,6 +10,8 @@ import NavLink from "./NavLink"
 import { socials } from "@/constants/socials"
 import useDarkModeStore from "@/stores/useDarkModeStore"
 import Typography from "../Typography"
+import useNavbarStore from "@/stores/useNavbarStore"
+import { navbarLink } from "@/constants/navbar"
 
 const navClassName = classnames(
   "z-30 flex flex-row justify-between md:flex-col py-4 px-8 md:p-16 w-full md:w-80",
@@ -25,9 +27,22 @@ const iconProps: Omit<IconProps, "name"> = {
   )
 }
 
+const ulContainerClassName = classnames("flex-1 my-0 mr-4 md:my-6 md:mr-0")
+
 const Navbar: FunctionComponent = () => {
   const isDark = useDarkModeStore.use.isDark()
   const toggleDarkMode = useDarkModeStore.use.toggleDarkMode()
+  const isNavbarOpen = useNavbarStore.use.isNavbarOpen()
+  const openNavbar = useNavbarStore.use.openNavbar()
+  const closeNavbar = useNavbarStore.use.closeNavbar()
+
+  const ulClassName = classnames(
+    "flex-col bg-slate-50 dark:bg-slate-900", // General Styles
+    "md:flex md:relative md:p-0 md:gap-2", // Desktop Styles
+    "absolute py-4 px-8 gap-4", // Mobile Styles
+    "inset-0 z-[999]",
+    isNavbarOpen ? "flex" : "hidden"
+  )
 
   return (
     <nav className={navClassName}>
@@ -43,23 +58,29 @@ const Navbar: FunctionComponent = () => {
           Full Stack Web Developer
         </Typography>
       </Link>
-      <div className="flex-1 my-0 mr-4 md:my-6 md:mr-0">
-        <ul className="flex gap-2 md:flex-col">
-          <li>
-            <NavLink href={"/#about"}>
-              About me
-            </NavLink>
+      <div className={ulContainerClassName}>
+        <Icon
+          name="menu-2"
+          className="block md:hidden cursor-pointer text-slate-300 dark:text-slate-50 hover:text-opacity-50"
+          onClick={openNavbar}
+        />
+        <ul className={ulClassName}>
+          <li className="block md:hidden cursor-pointer text-slate-300 dark:text-slate-50 hover:text-opacity-50 mb-2">
+            <Icon
+              name="x"
+              onClick={closeNavbar}
+            />
           </li>
-          <li>
-            <NavLink href={"/#projects"}>
-              Projects
-            </NavLink>
-          </li>
-          <li>
-            <NavLink href={"/#certifications"}>
-              Certifications
-            </NavLink>
-          </li>
+          {
+            navbarLink.map(({ href, children }, index) => (
+              <li key={index}>
+                <NavLink href={href}>
+                  {children}
+                </NavLink>
+              </li>
+            ))
+          }
+
         </ul>
       </div>
       <div className="flex gap-2 items-center justify-center">
