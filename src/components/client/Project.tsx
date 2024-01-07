@@ -23,7 +23,7 @@ const Project: FunctionComponent<Props> = ({
   return (
     <Link
       href={url}
-      className="gap-3 border-2 border-slate-2 border-dashed py-2 px-4"
+      className="gap-3 border-2 border-slate-200 dark:border-slate-700 dark:border-slate- border-dashed py-2 px-4"
     >
       <div className="flex gap-2 items-center">
         <Image
