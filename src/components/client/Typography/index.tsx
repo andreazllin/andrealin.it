@@ -4,7 +4,7 @@ import { FunctionComponent } from "react"
 import { TypographyProps } from "./types"
 import { classnames, cva } from "@/helpers/classnames"
 
-const typography = cva("lowercase duration-50", {
+const typography = cva("duration-50", {
   variants: {
     weight: {
       regular: "font-normal",

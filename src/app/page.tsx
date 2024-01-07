@@ -6,6 +6,8 @@ import { FunctionComponent, useMemo } from "react"
 import { classnames } from "@/helpers/classnames"
 import { certifications } from "@/constants/certifications"
 import Certification from "@/components/client/Certification"
+import { projects } from "@/constants/projects"
+import Project from "@/components/client/Project"
 
 const RootPage: FunctionComponent = () => {
   const language = (classes: string): string => {
@@ -54,6 +56,18 @@ const RootPage: FunctionComponent = () => {
           <br />
           Currently, I work with <span className={language("bg-blue-500")}>TypeScript</span> for both frontend and backend.
         </Typography>
+      </div>
+
+      <div id="projects">
+        {/* TODO: maybe put a carousel when it will be needed? */}
+        <Typography component="h2" size="2xl" weight="semibold" className="mb-2">
+          Projects
+        </Typography>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-2">
+          {
+            projects.map((props, index) => <Project key={index} {...props} />)
+          }
+        </div>
       </div>
 
       <div id="certifications">

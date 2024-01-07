@@ -102,7 +102,6 @@ img {
   }
 
   /* Text writing mode utilities */
-
   .writing-horizontal-tb {
     writing-mode: horizontal-tb;
   }
@@ -113,5 +112,17 @@ img {
 
   .writing-vertical-lr {
     writing-mode: vertical-lr;
+  }
+
+  /* Hide scrollbar */
+  /* Chrome, Safari and Opera */
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+ /* IE, Edge and Firefox */
+  .scrollbar-none {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 }

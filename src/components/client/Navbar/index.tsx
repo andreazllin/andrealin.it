@@ -51,6 +51,11 @@ const Navbar: FunctionComponent = () => {
             </NavLink>
           </li>
           <li>
+            <NavLink href={"/#projects"}>
+              Projects
+            </NavLink>
+          </li>
+          <li>
             <NavLink href={"/#certifications"}>
               Certifications
             </NavLink>

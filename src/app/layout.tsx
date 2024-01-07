@@ -10,7 +10,10 @@ import Providers from "@/components/client/Providers"
 import "@/styles/globals.css"
 import Stray from "@/components/client/Stray"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap"
+})
 
 const bodyClassName = classnames(
   inter.className,
@@ -19,7 +22,7 @@ const bodyClassName = classnames(
   "bg-white dark:bg-slate-800"
 )
 
-const mainClassName = classnames("w-full overflow-y-scroll py-4 px-8 md:p-16 relative flex-1 z-10")
+const mainClassName = classnames("w-full overflow-y-scroll py-4 px-8 md:p-16 relative flex-1 z-10 scrollbar-none")
 
 const RootLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   const isDark = cookies().get("darkMode")?.value === "true"
