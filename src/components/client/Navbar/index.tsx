@@ -22,7 +22,7 @@ const iconProps: Omit<IconProps, "name"> = {
   size: 16,
   className: classnames(
     "cursor-pointer",
-    "text-slate-300 dark:text-slate-50",
+    "text-slate-300",
     "hover:text-opacity-50"
   )
 }
@@ -61,11 +61,11 @@ const Navbar: FunctionComponent = () => {
       <div className={ulContainerClassName}>
         <Icon
           name="menu-2"
-          className="block md:hidden cursor-pointer text-slate-300 dark:text-slate-50 hover:text-opacity-50"
+          className="block md:hidden cursor-pointer text-slate-300 hover:text-opacity-50"
           onClick={openNavbar}
         />
         <ul className={ulClassName}>
-          <li className="block md:hidden cursor-pointer text-slate-300 dark:text-slate-50 hover:text-opacity-50 mb-2">
+          <li className="block md:hidden cursor-pointer text-slate-300 hover:text-opacity-50 mb-2">
             <Icon
               name="x"
               onClick={closeNavbar}
