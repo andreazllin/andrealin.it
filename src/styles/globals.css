@@ -8,6 +8,11 @@
   src: url("/assets/fonts/Stray.woff2");
 }
 
+@font-face {
+  font-family: "MinecraftEnchantment";
+  src: url("/assets/fonts/MinecraftEnchantment.woff2");
+}
+
 * {
   @apply scroll-smooth transition-colors duration-150;
 }

@@ -5,10 +5,9 @@ import { classnames } from "@/helpers/classnames"
 import Navbar from "@/components/client/Navbar"
 import { cookies } from "next/headers"
 import Providers from "@/components/client/Providers"
-
+import BackgroundName from "@/components/client/BackgroundName"
 
 import "@/styles/globals.css"
-import Stray from "@/components/client/Stray"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,7 +36,7 @@ const RootLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
             {children}
           </Providers>
         </main>
-        <Stray />
+        <BackgroundName />
       </body>
     </html>
   )

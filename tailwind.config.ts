@@ -13,7 +13,8 @@ const config: Config = {
         50: "50ms"
       },
       fontFamily:{
-        stray: ["Stray", "sans-serif"]
+        stray: ["Stray", "sans-serif"],
+        minecraftEnchantment: ["MinecraftEnchantment", "sans-serif"]
       },
       colors: {
         slate: {
