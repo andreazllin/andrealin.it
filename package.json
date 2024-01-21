@@ -19,7 +19,13 @@
     "react": "^18",
     "react-dom": "^18",
     "react-inlinesvg": "^4.1.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-parse-frontmatter": "^1.0.3",
+    "remark-stringify": "^11.0.0",
     "tailwind-merge": "^2.2.0",
+    "to-vfile": "^8.0.0",
+    "unified": "^11.0.4",
     "zustand": "^4.4.7"
   },
   "devDependencies": {
