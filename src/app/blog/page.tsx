@@ -15,6 +15,7 @@ const BlogPage: NextPage = async() => {
             postId={data.id}
             description={data.description}
             title={data.title}
+            date={data.date}
           />
         })
       }

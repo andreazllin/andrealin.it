@@ -1,6 +1,6 @@
 ---
 title: "How to setup your own Heart Rate chart with a Mi Band"
-date: "2020-01-29"
+date: "29/01/2020"
 description: "Test Description"
 keywords: ['heart', 'rate', 'heartrate', 'heart rate', 'xiaomi', 'mi', 'miband', 'mi band']
 ---
