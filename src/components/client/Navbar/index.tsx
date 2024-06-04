@@ -8,7 +8,7 @@ import clsx from "clsx"
 import Image from "next/image"
 import NavLink from "./NavLink"
 import { socials } from "@/constants/socials"
-import useDarkModeStore from "@/stores/useDarkModeStore"
+import useDarkMode from "@/hooks/useDarkMode"
 import Typography from "../Typography"
 import useNavbarStore from "@/stores/useNavbarStore"
 import { navbarLink } from "@/constants/navbar"
@@ -30,8 +30,7 @@ const iconProps: Omit<IconProps, "name"> = {
 const ulContainerClassName = classnames("flex-1 my-0 mr-4 md:my-6 md:mr-0")
 
 const Navbar: FunctionComponent = () => {
-  const isDark = useDarkModeStore.use.isDark()
-  const toggleDarkMode = useDarkModeStore.use.toggleDarkMode()
+  const { isDark, toggleDarkMode } = useDarkMode()
   const isNavbarOpen = useNavbarStore.use.isNavbarOpen()
   const openNavbar = useNavbarStore.use.openNavbar()
   const closeNavbar = useNavbarStore.use.closeNavbar()

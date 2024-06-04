@@ -3,7 +3,6 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { classnames } from "@/helpers/classnames"
 import Navbar from "@/components/client/Navbar"
-import { cookies } from "next/headers"
 import Providers from "@/components/client/Providers"
 import BackgroundName from "@/components/client/BackgroundName"
 
@@ -25,18 +24,16 @@ const bodyClassName = classnames(
 const mainClassName = classnames("w-full overflow-y-scroll py-4 px-8 md:p-16 relative flex-1 z-10 scrollbar-none")
 
 const RootLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
-  const isDark = cookies().get("darkMode")?.value === "true"
-
   return (
-    <html lang="en" className={classnames(isDark && "dark")}>
+    <html lang="en" suppressHydrationWarning>
       <body className={bodyClassName}>
-        <Navbar />
-        <main className={mainClassName}>
-          <Providers>
+        <Providers>
+          <Navbar />
+          <main className={mainClassName}>
             {children}
-          </Providers>
-        </main>
-        <BackgroundName />
+          </main>
+          <BackgroundName />
+        </Providers>
       </body>
     </html>
   )

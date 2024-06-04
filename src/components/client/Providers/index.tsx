@@ -1,16 +1,19 @@
 "use client"
 
 import { FunctionComponent, PropsWithChildren } from "react"
-import DarkMode from "./DarkMode"
+import { ThemeProvider } from "next-themes"
 
 const Providers: FunctionComponent<PropsWithChildren> = ({
   children
 }) => {
   return (
-    <>
-      <DarkMode />
+    <ThemeProvider
+      attribute="class"
+      storageKey="dark-mode"
+      defaultTheme="light"
+    >
       {children}
-    </>
+    </ThemeProvider>
   )
 }
 
