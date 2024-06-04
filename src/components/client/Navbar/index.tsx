@@ -48,7 +48,7 @@ const Navbar: FunctionComponent = () => {
     <nav className={navClassName}>
       <Link href="/" className="hidden md:block">
         <Image
-          className="object-fit h-auto w-auto rounded-full"
+          className="object-fit h-auto w-auto rounded-full p-2 border-dashed border-2 border-slate-200 dark:border-slate-700"
           width={100}
           height={100}
           src="/assets/images/profile.jpg"
