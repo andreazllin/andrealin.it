@@ -14,7 +14,8 @@ const config: Config = {
       },
       fontFamily:{
         stray: ["Stray", "sans-serif"],
-        minecraftEnchantment: ["MinecraftEnchantment", "sans-serif"]
+        minecraftEnchantment: ["MinecraftEnchantment", "sans-serif"],
+        drukWideBold: ["DrukWideBold", "sans-serif"]
       },
       colors: {
         slate: {

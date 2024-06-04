@@ -13,6 +13,11 @@
   src: url("/assets/fonts/MinecraftEnchantment.woff2");
 }
 
+@font-face {
+  font-family: "DrukWideBold";
+  src: url("/assets/fonts/DrukWideBold.woff2");
+}
+
 * {
   @apply scroll-smooth transition-colors duration-150;
 }

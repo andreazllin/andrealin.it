@@ -5,11 +5,12 @@ import { randomElementFromArray } from "@/helpers/array"
 
 const BackgroundName: FunctionComponent = () => {
   const font = randomElementFromArray([
-    "font-stray",
-    "font-minecraftEnchantment"
+    "font-stray lowercase",
+    "font-minecraftEnchantment lowercase",
+    "font-drukWideBold uppercase"
   ])
 
-  const classes = classnames("whitespace-nowrap lowercase opacity-5",
+  const classes = classnames("whitespace-nowrap opacity-5",
     "writing-vertical-rl",
     "fixed",
     "bottom-2 right-8 z-0",
