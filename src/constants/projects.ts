@@ -11,7 +11,7 @@ export const projects: Array<ProjectProps> = [
   {
     name: "XDEX",
     description: "A cryptocurrency exchange with a focus on privacy and security.",
-    work: "A mobile app for iOS and Android, built with React Native and native modules.",
+    work: "A mobile app for iOS and Android, built with React Native and custom native modules.",
     image: "/assets/images/projects/xdex.svg",
     url: "https://xdex.ch"
   },

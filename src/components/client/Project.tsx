@@ -23,21 +23,23 @@ const Project: FunctionComponent<Props> = ({
   return (
     <Link
       href={url}
-      className="gap-3 border-2 border-slate-200 dark:border-slate-700 dark:border-slate- border-dashed py-2 px-4"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="gap-3 border-2 border-slate-200 dark:border-slate-700 dark:border-slate- border-dashed p-4"
     >
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-2 items-start">
         <Image
           src={image}
           alt={name}
           width={64}
           height={64}
-          className="h-min aspect-square bg-white object-center object-contain"
+          className="aspect-square"
         />
-        <div>
-          <Typography variant="primary" weight="semibold">
+        <div className="overflow-hidden">
+          <Typography variant="primary" weight="semibold" lineHeight={"none"} className="pb-1">
             {name}
           </Typography>
-          <Typography lineHeight={4} size="xs" variant="secondary" className="overflow-hidden line-clamp-3 text-ellipsis">
+          <Typography lineHeight={4} size="xs" variant="secondary">
             {description}
           </Typography>
         </div>
