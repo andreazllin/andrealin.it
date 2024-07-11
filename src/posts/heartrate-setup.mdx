@@ -1,0 +1,46 @@
+---
+title: "How to setup your own Heart Rate chart with a Mi Band"
+date: "29/01/2020"
+description: "Track your heart rate with a Mi Band"
+---
+
+## Things you need
+
+- **[MongoDB Atlas](https://www.mongodb.com/)**
+- **[Client](https://github.com/nilaerdna/heartrate-client)**
+- **[Server](https://github.com/nilaerdna/heartrate-server)**
+- **[Notify for Mi Band](https://play.google.com/store/apps/details?id=com.mc.miband1)**
+- **[Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)**
+
+## Backend Setup
+
+1. Get your MongoDB URI, it should be something like this: `mongodb+srv://<username>:<password>@xxx.xxxxx.mongodb.net/<database>?retryWrites=true&w=majority`
+2. Deploy the server and start it with `npm start`.
+
+## Frontend Setup
+
+1. Rename `.env.template` to `.env`.
+2. Edit `.env` to `NEXT_PUBLIC_SERVER_URI=https://your_servers.uri`.
+3. Build and deploy.
+
+## Phone Setup
+
+**This was all tested with a Mi Band 4.**
+
+**This setup only works with Android Devices.**
+
+1. Setup your Mi Band on *Notify for Mi Band*.
+2. Create a new profile on *Tasker*.
+3. On Event/Trigger *Intent Received* type `com.mc.miband.heartRateGot`.
+4. Create a Task:
+    1. Variable Set: Name `%heartRate` To `%value`.
+    2. HTTP Post:
+        - Server:Port = Your server's URL.
+        - Path = `/send`.
+        - Data / File = `hr=%heartRate`.
+        - Content Type = `application/x-www-form-urlencoded`.
+
+## How does this work?
+
+Everytime your Mi Band registers your Heart Rate it will trigger a Tasker event, in this case it will send an HTTP POST request to your server (backend) that will store the value of the Heart Rate and the time (Epoch) of the request in MongoDB.
+By opening the website (frontend) it will request your heart rate values to the server which will respond with data gathered from the database.

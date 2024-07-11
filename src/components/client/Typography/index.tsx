@@ -64,6 +64,28 @@ const typography = cva("duration-50", {
       normal: "leading-normal",
       relaxed: "leading-relaxed",
       loose: "leading-loose"
+    },
+    lineClamp: {
+      1: "line-clamp-3",
+      2: "line-clamp-3",
+      3: "line-clamp-3",
+      4: "line-clamp-4",
+      5: "line-clamp-5",
+      6: "line-clamp-6",
+      none: "line-clamp-none"
+    },
+    whitespace: {
+      normal: "whitespace-normal",
+      nowrap: "whitespace-nowrap",
+      pre: "whitespace-pre",
+      "pre-line": "whitespace-pre-line",
+      "pre-wrap": "whitespace-pre-wrap",
+      "break-spaces": "whitespace-break-spaces"
+    },
+    overflow: {
+      truncate: "truncate",
+      ellipsis: "text-ellipsis",
+      clip: "text-clip"
     }
   }
 })
@@ -79,9 +101,12 @@ const Typography: FunctionComponent<TypographyProps> = ({
   variant = "primary",
   decoration = "no-underline",
   lineHeight = "normal",
+  lineClamp,
+  whitespace,
+  overflow,
   ...props
 }) => {
-  const typographyClasses = typography({ weight, size, family, align, decoration, variant, lineHeight })
+  const typographyClasses = typography({ weight, size, family, align, decoration, variant, lineHeight, lineClamp, whitespace, overflow })
   const classes = classnames(typographyClasses, className)
 
   return (

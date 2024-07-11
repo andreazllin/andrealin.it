@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import twTypography from "@tailwindcss/typography"
 
 const config: Config = {
   darkMode: "class",
@@ -117,6 +118,8 @@ const config: Config = {
       }
     }
   },
-  plugins: []
+  plugins: [
+    twTypography
+  ]
 }
 export default config

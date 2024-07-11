@@ -37,6 +37,18 @@ export type TypographyStyle = {
    * Line heigth
    */
   lineHeight?: 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | "none" | "tight" | "snug" | "normal" | "relaxed" | "loose"
+  /**
+   * Line clamp
+   */
+  lineClamp?: 1 | 2 | 3 | 4 | 5 | 6 | "none"
+  /**
+   * Whitespace
+   */
+  whitespace?: "normal" | "nowrap" | "pre" | "pre-line" | "pre-wrap" | "break-spaces"
+  /**
+  * Text overflow
+  */
+  overflow?: "truncate" | "ellipsis" | "clip"
 }
 
 type Heading = HTMLAttributes<HTMLHeadingElement> & {

@@ -7,6 +7,7 @@ export type IconName =
 	| "brand-instagram"
 	| "brand-linkedin"
 	| "brand-twitter"
+	| "chevron-right"
 	| "mail"
 	| "menu-2"
 	| "moon"
