@@ -28,15 +28,15 @@ const RootPage: FunctionComponent = () => {
     <div className="space-y-6">
       <Blockquote>
         <Typography>
-          {`Hello! My name is Andrea, I am ${getAge("31/10/2002")} years old and I'm currently a developer `}
+          {`Hello! My name is Andrea, I am ${getAge("31/10/2002")} years old and I'm currently a developer at `}
 
           <Link
-            href="https://soluzionifutura.it"
+            href="https://polarity.dev"
             rel="noopener noreferrer"
             target="_blank"
             className="underline underline-offset-4 font-semibold"
           >
-            @soluzionifutura
+            Polarity
           </Link>
         </Typography>
 

@@ -2,11 +2,11 @@ import { Props as ProjectProps } from "@/components/client/Project"
 
 export const projects: Array<ProjectProps> = [
   {
-    name: "Soluzioni Futura",
+    name: "Polarity",
     description: "A consulting company specialized in software development and infrastructure in the cloud.",
     work: "Minosse, an internal software for time tracking, planning, ticketing and more.",
-    image: "/assets/images/projects/soluzioni-futura.jpg",
-    url: "https://soluzionifutura.it"
+    image: "/assets/images/projects/polarity.jpg",
+    url: "https://polarity.dev"
   },
   {
     name: "XDEX",
