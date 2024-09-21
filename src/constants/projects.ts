@@ -17,7 +17,7 @@ export const projects: Array<ProjectProps> = [
   },
   {
     name: "Holyart",
-    description: "An e-commerce that sells religious articles.",
+    description: "The first Italian e-commerce dedicated to sacred art and religious items.",
     work: "Various projects including the mobile app, the website and some scripts.",
     image: "/assets/images/projects/holyart.png",
     url: "https://holyart.it"
