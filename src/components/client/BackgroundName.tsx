@@ -1,3 +1,5 @@
+"use client"
+
 import { FunctionComponent } from "react"
 import Typography from "./Typography"
 import { classnames } from "@/helpers/classnames"

@@ -1,3 +1,5 @@
+"use client"
+
 import Blockquote from "@/components/client/Blockquote"
 import Typography from "@/components/client/Typography"
 import { getAge } from "@/helpers/dates"
