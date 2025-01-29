@@ -16,5 +16,9 @@ export const navbarLink: Array<Pick<NavLinkProps, "children" | "href">> = [
   {
     children: "Blog",
     href: "/blog"
+  },
+  {
+    children: "Photos",
+    href: "/photos"
   }
 ]

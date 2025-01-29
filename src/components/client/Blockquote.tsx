@@ -14,7 +14,6 @@ const Blockquote: FunctionComponent<Props> = ({
     "bg-gradient-to-r to-transparent",
     "from-slate-100 dark:from-slate-700",
     "pl-4 py-2",
-    "text-2xl font-medium",
     className
   )
 

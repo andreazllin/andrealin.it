@@ -21,7 +21,7 @@ const bodyClassName = classnames(
   "overflow-hidden"
 )
 
-const mainClassName = classnames("w-full overflow-y-scroll py-4 px-8 md:p-16 relative flex-1 z-10 scrollbar-none")
+const mainClassName = classnames("w-full overflow-y-scroll py-4 px-8 md:p-16 relative flex-1 z-10 scrollbar-none prose dark:prose-invert")
 
 const RootLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return (

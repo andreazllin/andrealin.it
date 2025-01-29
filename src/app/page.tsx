@@ -25,9 +25,9 @@ const RootPage: FunctionComponent = () => {
   }, [])
 
   return (
-    <div className="space-y-6">
+    <div>
       <Blockquote>
-        <Typography>
+        <span>
           {`Hello! My name is Andrea, I am ${getAge("31/10/2002")} years old and I'm currently a developer at `}
 
           <Link
@@ -38,15 +38,15 @@ const RootPage: FunctionComponent = () => {
           >
             Polarity
           </Link>
-        </Typography>
+        </span>
 
       </Blockquote>
 
       <div id="about">
-        <Typography component="h2" size="2xl" weight="semibold" className="mb-2">
+        <h2>
           About me
-        </Typography>
-        <Typography>
+        </h2>
+        <p>
           During high school, I learned to use <span className={language("bg-blue-800")}>C++</span> and <span className={language("bg-red-600")}>Java</span> for desktop programming.
           Additionally, I continued to learn <span className={language("bg-yellow-300 text-blue-600")}>Python</span> independently at home.
           <br />
@@ -55,7 +55,7 @@ const RootPage: FunctionComponent = () => {
           Regarding database management, I used <span className={language("bg-cyan-900 text-orange-400")}>MySQL</span> in school and <span className={language("bg-green-600")}>MongoDB</span> and <span className={language("bg-orange-500")}>Firebase</span> independently.
           <br />
           Currently, I work with <span className={language("bg-blue-500")}>TypeScript</span> for both frontend and backend.
-        </Typography>
+        </p>
       </div>
 
       <div id="projects">
