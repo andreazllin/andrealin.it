@@ -1,4 +1,4 @@
-import "./globals.css"
+import "@/styles/globals.css"
 import { FunctionComponent, PropsWithChildren } from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
