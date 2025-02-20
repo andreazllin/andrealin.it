@@ -8,6 +8,20 @@
     --radius: 0.6rem;
 }
 
+@theme {
+  --color-slate-50: oklch(97.49% 0.0025 228.78);
+  --color-slate-100: oklch(94.32% 0.0067 233.64);
+  --color-slate-200: oklch(91.85% 0.0085 236.57);
+  --color-slate-300: oklch(73.48% 0.017 253.94);
+  --color-slate-400: oklch(59.32% 0.018 253.97);
+  --color-slate-500: oklch(47.5% 0.019 254.02);
+  --color-slate-600: oklch(41.4% 0.019 257.25);
+  --color-slate-700: oklch(28.35% 0.0124 258.37);
+  --color-slate-800: oklch(23.69% 0.0097 248.24);
+  --color-slate-900: oklch(19.04% 0.0069 258.37);
+  --color-slate-950: initial;
+}
+
 @theme inline {
     --radius-sm: calc(var(--radius) - 4px);
     --radius-md: calc(var(--radius) - 2px);
