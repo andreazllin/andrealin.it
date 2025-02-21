@@ -32,9 +32,9 @@ export const AboutMe: FunctionComponent = () => {
           "text-secondary"
         )}
       >
-        With a proven track record in developing Frontend e Backend solutions
-        for Web and Mobile cross-platform, mainly with React (and React Native)
-        using TypeScript.
+        With a proven track record in developing frontend and backend solutions
+        for Web and Mobile platforms, mainly with React (and React Native) using
+        TypeScript.
       </p>
     </div>
   )
