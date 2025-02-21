@@ -1,10 +1,13 @@
+"use client"
+
 import { cn } from "@/lib/utils"
 import { FunctionComponent } from "react"
 import { Avatar, AvatarFallback } from "./ui/avatar"
 import { AvatarImage } from "@radix-ui/react-avatar"
-// import { Button } from "./ui/button"
-// import { CalendarIcon } from "lucide-react"
+import { Button } from "./ui/button"
+import { CalendarIcon } from "lucide-react"
 import { typography } from "./typography"
+import { toast } from "sonner"
 
 type Props = {
   containerClassName?: string
@@ -35,9 +38,9 @@ export const Profile: FunctionComponent<Props> = ({ containerClassName }) => {
       </div>
 
       <div className="flex gap-2 max-sm:basis-full">
-        {/* <Button>
+        <Button onClick={() => toast("Coming soon!")}>
           <CalendarIcon /> Book a call with me
-        </Button> */}
+        </Button>
       </div>
 
       <div className="basis-full">
