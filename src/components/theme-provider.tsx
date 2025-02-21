@@ -10,10 +10,19 @@ export function ThemeProvider({
   children,
   ...props
 }: React.ComponentProps<typeof NextThemesProvider>) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+  return (
+    <NextThemesProvider {...props}>
+      <>
+        {children}
+        <ThemeToggle className="fixed right-6 bottom-6 z-10" />
+      </>
+    </NextThemesProvider>
+  )
 }
 
-export function ThemeToggle() {
+export const ThemeToggle: React.FunctionComponent<{ className?: string }> = ({
+  className
+}) => {
   const [mounted, setMounted] = React.useState(false)
   const { isDark, toggleTheme } = useTheme()
 
@@ -23,13 +32,15 @@ export function ThemeToggle() {
   }, [])
 
   if (!mounted) {
-    return <Button size="icon" disabled>
-      <LoaderCircleIcon className="animate-spin"/>
-    </Button>
+    return (
+      <Button size="icon" disabled className={className}>
+        <LoaderCircleIcon className="animate-spin" />
+      </Button>
+    )
   }
 
   return (
-    <Button size="icon" onClick={toggleTheme}>
+    <Button size="icon" onClick={toggleTheme} className={className}>
       {isDark ? <SunIcon /> : <MoonIcon />}
     </Button>
   )

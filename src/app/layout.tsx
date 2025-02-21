@@ -1,6 +1,6 @@
 import "@/styles/globals.css"
 import { FunctionComponent, PropsWithChildren } from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -13,7 +13,7 @@ const inter = Inter({
 const RootLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(inter.className, "bg-slate-50 dark:bg-slate-900")}>
+      <body className={cn(inter.className, "bg-slate-50 dark:bg-slate-800")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -32,4 +32,17 @@ export default RootLayout
 export const metadata: Metadata = {
   title: "Andrea Lin | Full Stack Developer",
   description: "Hello! My name is Andrea Lin and I'm Full Stack Developer."
+}
+
+// https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" }
+  ]
 }
