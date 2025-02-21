@@ -18,7 +18,8 @@
   --color-slate-700: oklch(28.35% 0.0124 258.37);
   --color-slate-800: oklch(23.69% 0.0097 248.24);
   --color-slate-900: oklch(19.04% 0.0069 258.37);
-  --color-slate-950: initial;
+  /* TODO: Maybe change this color */
+  --color-slate-950: oklch(15% 0.005 258); /* oklch(14% 0.005 258.37) */
 }
 
 @theme inline {
