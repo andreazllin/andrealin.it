@@ -14,7 +14,7 @@ export function ThemeProvider({
     <NextThemesProvider {...props}>
       <>
         {children}
-        <ThemeToggle className="fixed right-6 bottom-6 z-10" />
+        <ThemeToggle className="fixed right-5 bottom-5 z-10" />
       </>
     </NextThemesProvider>
   )
