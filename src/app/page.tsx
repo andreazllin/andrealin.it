@@ -8,7 +8,7 @@ import { Experience } from "@/components/experience"
 
 const Home: FunctionComponent = () => {
   return (
-    <div className="mx-auto min-h-screen border-slate-200 bg-white md:max-w-10/12 md:border-x xl:max-w-8/12 dark:border-slate-700 dark:bg-slate-900">
+    <div className="mx-auto min-h-screen border-slate-200 bg-white pb-12 md:max-w-10/12 md:border-x xl:max-w-8/12 dark:border-slate-700 dark:bg-slate-900">
       <section className="h-[128px] bg-black">
         <Squares
           direction="diagonal"

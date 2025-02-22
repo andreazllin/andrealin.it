@@ -5,16 +5,21 @@ export const AboutMe: FunctionComponent = () => {
   return (
     <div>
       <h2
-        className={typography({
-          size: "text-display-xs",
-          weight: "semibold"
-        })}
+        className={typography(
+          {
+            size: "text-md",
+            weight: "semibold",
+            suggestedMaxWidth: true
+          },
+          "leading-[2.5rem]"
+        )}
       >
         About me
       </h2>
       <p
         className={typography(
           {
+            size: "text-sm",
             suggestedMaxWidth: true
           },
           "text-secondary"
@@ -27,6 +32,7 @@ export const AboutMe: FunctionComponent = () => {
       <p
         className={typography(
           {
+            size: "text-sm",
             suggestedMaxWidth: true
           },
           "text-secondary"

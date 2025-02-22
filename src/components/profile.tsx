@@ -39,20 +39,23 @@ export const Profile: FunctionComponent<Props> = ({ containerClassName }) => {
 
       <div className="flex gap-2 max-sm:basis-full">
         <Button onClick={() => toast("Coming soon!")}>
-          <CalendarIcon /> Book a call with me
+          <CalendarIcon /> Book a call with me!
         </Button>
       </div>
 
       <div className="basis-full">
         <h2
-          className={typography({
-            size: "text-display-xs",
-            weight: "semibold"
-          })}
+          className={typography(
+            {
+              size: "text-lg",
+              weight: "semibold"
+            },
+            "leading-[2.5rem]"
+          )}
         >
           Experience
         </h2>
-        <p className={typography(undefined, "text-secondary")}>
+        <p className={typography({ size: "text-sm" }, "text-secondary")}>
           I specialise in the development of web and mobile applications.
         </p>
       </div>
