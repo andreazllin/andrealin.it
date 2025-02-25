@@ -5,9 +5,16 @@ import { FunctionComponent } from "react"
 import { Avatar, AvatarFallback } from "./ui/avatar"
 import { AvatarImage } from "@radix-ui/react-avatar"
 import { Button } from "./ui/button"
-import { CalendarIcon } from "lucide-react"
+import { CalendarIcon, DownloadIcon } from "lucide-react"
 import { typography } from "./typography"
 import { toast } from "sonner"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu"
+import Link from "next/link"
 
 type Props = {
   containerClassName?: string
@@ -41,6 +48,24 @@ export const Profile: FunctionComponent<Props> = ({ containerClassName }) => {
         <Button onClick={() => toast("Coming soon!")}>
           <CalendarIcon /> Book a call with me!
         </Button>
+
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button size={"icon"}>
+              <DownloadIcon />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuItem asChild>
+              <Link href={"/assets/files/resume.pdf"}>Resume (English)</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href={"/assets/files/reference_letter_it.pdf"}>
+                Reference Letter (Italian)
+              </Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
 
       <div className="basis-full">
