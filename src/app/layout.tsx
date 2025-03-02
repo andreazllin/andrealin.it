@@ -33,7 +33,10 @@ export default RootLayout
 
 export const metadata: Metadata = {
   title: "Andrea Lin | Full Stack Developer",
-  description: "Hello! My name is Andrea Lin and I'm Full Stack Developer."
+  description: "Hello! My name is Andrea Lin and I'm Full Stack Developer.",
+  other: {
+    "darkreader-lock": "true"
+  }
 }
 
 // https://nextjs.org/docs/app/api-reference/functions/generate-viewport
