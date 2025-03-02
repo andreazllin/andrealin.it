@@ -1,10 +1,11 @@
 import React, { FunctionComponent } from "react"
 import { typography } from "./typography"
+import { Text } from "./text"
 
 export const AboutMe: FunctionComponent = () => {
   return (
     <div>
-      <h2
+      {/* <h2
         className={typography(
           {
             size: "text-md",
@@ -16,6 +17,22 @@ export const AboutMe: FunctionComponent = () => {
       >
         About me
       </h2>
+      <p
+        className={typography(
+          {
+            size: "text-sm",
+            suggestedMaxWidth: true
+          },
+          "text-secondary"
+        )}
+      >
+        I&apos;m a passionate Web developer with over 3 years of professional
+        experience, capable of working in a team.
+      </p> */}
+
+      <Text className="text-[1.25rem]/[1.5rem] font-semibold" as="h2">
+        About me
+      </Text>
       <p
         className={typography(
           {
