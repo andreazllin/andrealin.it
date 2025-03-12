@@ -67,7 +67,7 @@ export const Experience: FunctionComponent<Props> = ({
           </div>
         </CardHeader>
         <CardFooter>
-          <CardDescription>Oct 2021 - Present</CardDescription>
+          <CardDescription>Oct 2021 - Mar 2025</CardDescription>
         </CardFooter>
       </Card>
     </div>
