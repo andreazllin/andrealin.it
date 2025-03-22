@@ -3,7 +3,7 @@
 import * as React from "react"
 import { ThemeProvider as NextThemesProvider } from "next-themes"
 import { Button } from "./ui/button"
-import { LoaderCircleIcon, MoonIcon, SunIcon } from "lucide-react"
+import { LoaderCircleIcon, MoonIcon, SunIcon, MonitorIcon } from "lucide-react"
 import useTheme from "@/hooks/useTheme"
 
 export function ThemeProvider({
@@ -24,7 +24,7 @@ export const ThemeToggle: React.FunctionComponent<{ className?: string }> = ({
   className
 }) => {
   const [mounted, setMounted] = React.useState(false)
-  const { isDark, toggleTheme } = useTheme()
+  const { isDark, isLight, isSystem, cycleTheme } = useTheme()
 
   // useEffect only runs on the client, so now we can safely show the UI
   React.useEffect(() => {
@@ -40,8 +40,10 @@ export const ThemeToggle: React.FunctionComponent<{ className?: string }> = ({
   }
 
   return (
-    <Button size="icon" onClick={toggleTheme} className={className}>
-      {isDark ? <SunIcon /> : <MoonIcon />}
+    <Button size="icon" onClick={cycleTheme} className={className}>
+      {isDark && <SunIcon />}
+      {isLight && <MoonIcon />}
+      {isSystem && <MonitorIcon />}
     </Button>
   )
 }
