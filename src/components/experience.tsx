@@ -20,8 +20,7 @@ export const Experience: FunctionComponent<Props> = ({
   containerClassName
 }) => {
   return (
-    <div className={cn("grid gap-x-8", containerClassName)}>
-      {/* <div className={cn("grid grid-cols-3 gap-x-8", containerClassName)}> */}
+    <div className={cn("grid grid-cols-2 gap-4", containerClassName)}>
       {experiences.map((experience, index) => {
         const startDate = format(experience.startDate, "MMM yyyy")
         const endDate = experience.endDate
@@ -31,13 +30,13 @@ export const Experience: FunctionComponent<Props> = ({
         const duration = formatDuration(
           intervalToDuration({
             start: experience.startDate,
-            end: experience.endDate ?? new Date()
+            end: experience.endDate || new Date(Date.now())
           }),
           { format: ["years", "months"], delimiter: ", " }
         )
 
         return (
-          <Card key={index} className="max-w-fit dark:bg-slate-800">
+          <Card key={index} className="w-full dark:bg-slate-800">
             <CardHeader className="flex-row items-center gap-3">
               <Image
                 src={`/assets/images/${experience.image}`}
@@ -59,7 +58,8 @@ export const Experience: FunctionComponent<Props> = ({
             </CardHeader>
             <CardFooter>
               <CardDescription>
-                {startDate} - {endDate} ({duration})
+                {startDate} - {endDate}{" "}
+                {experience.endDate ? `(${duration})` : ""}
               </CardDescription>
             </CardFooter>
           </Card>
