@@ -9,6 +9,8 @@ import {
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { typography } from "./typography"
+import { format, formatDuration, intervalToDuration } from "date-fns"
+import { experiences } from "@/constants/experiences"
 
 type Props = {
   containerClassName?: string
@@ -20,56 +22,49 @@ export const Experience: FunctionComponent<Props> = ({
   return (
     <div className={cn("grid gap-x-8", containerClassName)}>
       {/* <div className={cn("grid grid-cols-3 gap-x-8", containerClassName)}> */}
-      {/* {Array.from({ length: 3 }).map((_, index) => (
-        <Card className="w-fit dark:bg-slate-800" key={index}>
-          <CardHeader className="flex-row items-center gap-3">
-            <Image
-              src={"/assets/images/polarity.jpg"}
-              alt={"Polarity Logo"}
-              width={64}
-              height={64}
-              className="aspect-square rounded-full"
-            />
-            <div className="flex flex-col gap-2">
-              <CardTitle
-                className={typography({ size: "text-md", weight: "medium" })}
-              >
-                Software Development Engineer
-              </CardTitle>
-              <CardDescription className={typography({ size: "text-sm" })}>
-                Polarity
+      {experiences.map((experience, index) => {
+        const startDate = format(experience.startDate, "MMM yyyy")
+        const endDate = experience.endDate
+          ? format(experience.endDate, "MMM yyyy")
+          : "Present"
+
+        const duration = formatDuration(
+          intervalToDuration({
+            start: experience.startDate,
+            end: experience.endDate ?? new Date()
+          }),
+          { format: ["years", "months"], delimiter: ", " }
+        )
+
+        return (
+          <Card key={index} className="max-w-fit dark:bg-slate-800">
+            <CardHeader className="flex-row items-center gap-3">
+              <Image
+                src={`/assets/images/${experience.image}`}
+                alt={`${experience.name} Logo`}
+                width={64}
+                height={64}
+                className="aspect-square rounded-full"
+              />
+              <div className="flex flex-col gap-2">
+                <CardTitle
+                  className={typography({ size: "text-md", weight: "medium" })}
+                >
+                  {experience.role}
+                </CardTitle>
+                <CardDescription className={typography({ size: "text-sm" })}>
+                  {experience.name}
+                </CardDescription>
+              </div>
+            </CardHeader>
+            <CardFooter>
+              <CardDescription>
+                {startDate} - {endDate} ({duration})
               </CardDescription>
-            </div>
-          </CardHeader>
-          <CardFooter>
-            <CardDescription>Oct 2021 - Present</CardDescription>
-          </CardFooter>
-        </Card>
-      ))} */}
-      <Card className="max-w-fit dark:bg-slate-800">
-        <CardHeader className="flex-row items-center gap-3">
-          <Image
-            src={"/assets/images/polarity.jpg"}
-            alt={"Polarity Logo"}
-            width={64}
-            height={64}
-            className="aspect-square rounded-full"
-          />
-          <div className="flex flex-col gap-2">
-            <CardTitle
-              className={typography({ size: "text-md", weight: "medium" })}
-            >
-              Software Development Engineer
-            </CardTitle>
-            <CardDescription className={typography({ size: "text-sm" })}>
-              Polarity
-            </CardDescription>
-          </div>
-        </CardHeader>
-        <CardFooter>
-          <CardDescription>Oct 2021 - Mar 2025</CardDescription>
-        </CardFooter>
-      </Card>
+            </CardFooter>
+          </Card>
+        )
+      })}
     </div>
   )
 }
