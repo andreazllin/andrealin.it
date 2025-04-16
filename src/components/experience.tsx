@@ -11,6 +11,7 @@ import Image from "next/image"
 import { typography } from "./typography"
 import { format, formatDuration, intervalToDuration } from "date-fns"
 import { experiences } from "@/constants/experiences"
+import Link from "next/link"
 
 type Props = {
   containerClassName?: string
@@ -38,13 +39,19 @@ export const Experience: FunctionComponent<Props> = ({
         return (
           <Card key={index} className="w-full dark:bg-slate-800">
             <CardHeader className="flex-row items-center gap-3">
-              <Image
-                src={`/assets/images/${experience.image}`}
-                alt={`${experience.name} Logo`}
-                width={64}
-                height={64}
-                className="aspect-square rounded-full"
-              />
+              <Link
+                href={experience.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src={`/assets/images/${experience.image}`}
+                  alt={`${experience.name} Logo`}
+                  width={64}
+                  height={64}
+                  className="aspect-square rounded-full transition-transform duration-200 hover:scale-105 active:scale-95"
+                />
+              </Link>
               <div className="flex flex-col gap-2">
                 <CardTitle
                   className={typography({ size: "text-md", weight: "medium" })}
