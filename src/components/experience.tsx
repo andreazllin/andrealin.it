@@ -1,4 +1,10 @@
+import { experiences } from "@/constants/experiences"
+import { cn } from "@/lib/utils"
+import { format, formatDuration, intervalToDuration } from "date-fns"
+import Image from "next/image"
+import Link from "next/link"
 import React, { FunctionComponent } from "react"
+import { typography } from "./typography"
 import {
   Card,
   CardDescription,
@@ -6,12 +12,6 @@ import {
   CardHeader,
   CardTitle
 } from "./ui/card"
-import { cn } from "@/lib/utils"
-import Image from "next/image"
-import { typography } from "./typography"
-import { format, formatDuration, intervalToDuration } from "date-fns"
-import { experiences } from "@/constants/experiences"
-import Link from "next/link"
 
 type Props = {
   containerClassName?: string
@@ -37,7 +37,10 @@ export const Experience: FunctionComponent<Props> = ({
         )
 
         return (
-          <Card key={index} className="w-full dark:bg-slate-800">
+          <Card
+            key={index}
+            className="w-full max-lg:col-span-2 dark:bg-slate-800"
+          >
             <CardHeader className="flex-row items-center gap-3">
               <Link
                 href={experience.url}
