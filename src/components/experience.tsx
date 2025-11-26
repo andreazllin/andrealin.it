@@ -1,6 +1,6 @@
 import { experiences } from "@/constants/experiences"
 import { cn } from "@/lib/utils"
-import { format, formatDuration, intervalToDuration } from "date-fns"
+import { format } from "date-fns"
 import Image from "next/image"
 import Link from "next/link"
 import React, { FunctionComponent } from "react"
