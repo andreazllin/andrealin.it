@@ -28,14 +28,6 @@ export const Experience: FunctionComponent<Props> = ({
           ? format(experience.endDate, "MMM yyyy")
           : "Present"
 
-        const duration = formatDuration(
-          intervalToDuration({
-            start: experience.startDate,
-            end: experience.endDate || new Date(Date.now())
-          }),
-          { format: ["years", "months"], delimiter: ", " }
-        )
-
         return (
           <Card
             key={index}
@@ -68,8 +60,7 @@ export const Experience: FunctionComponent<Props> = ({
             </CardHeader>
             <CardFooter>
               <CardDescription>
-                {startDate} - {endDate}{" "}
-                {experience.endDate ? `(${duration})` : ""}
+                {startDate} - {endDate}
               </CardDescription>
             </CardFooter>
           </Card>

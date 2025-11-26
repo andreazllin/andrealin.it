@@ -25,7 +25,7 @@ export const AboutMe: FunctionComponent = () => {
           "text-secondary"
         )}
       >
-        I&apos;m a passionate Web developer with over 3 years of professional
+        I&apos;m a passionate Web developer with over 4 years of professional
         experience, capable of working in a team.
       </p>
       <br />
